@@ -36,6 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.grey[50].withOpacity(0.9),
       appBar: AppBar(
+        backgroundColor: Colors.black.withOpacity(0.9),
         title: Text(
           "Profil",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -62,13 +63,6 @@ class _ProfilePageState extends State<ProfilePage> {
           )
         ],
         centerTitle: true,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.white60, Colors.purple])),
-        ),
         iconTheme: IconThemeData(
           color: Colors.transparent,
         ),

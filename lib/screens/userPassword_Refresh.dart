@@ -21,16 +21,10 @@ class _UserPassordRefresh extends State<UserPassordRefresh> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.black54.withOpacity(0.9),
         title: Text(
           "Şifre yenile",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.white60, Colors.purple])),
         ),
         iconTheme: IconThemeData(
           color: Colors.white,
@@ -126,7 +120,7 @@ class _UserPassordRefresh extends State<UserPassordRefresh> {
                       child: Material(
                         elevation: 1.0,
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.purple.withOpacity(0.4),
+                        color: Colors.black54.withOpacity(0.4),
                         child: MaterialButton(
                           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           onPressed: () {

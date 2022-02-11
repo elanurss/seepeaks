@@ -52,6 +52,7 @@ class _SignUpHomeState extends State<SignUpHome> {
                 Text(
                   "SEEPEAKS",
                   style: TextStyle(
+                      color: Colors.black54.withOpacity(0.7),
                       fontFamily: "Montserrat",
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
@@ -81,7 +82,7 @@ class _SignUpHomeState extends State<SignUpHome> {
                         child: Material(
                           elevation: 3.0,
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.purple.withOpacity(0.4),
+                          color: Colors.black54.withOpacity(0.4),
                           child: MaterialButton(
                             padding:
                                 EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),

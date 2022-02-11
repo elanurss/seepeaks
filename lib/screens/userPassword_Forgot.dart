@@ -34,6 +34,7 @@ class _UserPasswordForgot extends State<UserPasswordForgot> {
                     Text(
                       "SEEPEAKS",
                       style: TextStyle(
+                          color: Colors.black54.withOpacity(0.7),
                           fontFamily: "Montserrat",
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
@@ -70,7 +71,7 @@ class _UserPasswordForgot extends State<UserPasswordForgot> {
                       child: Material(
                         elevation: 1.0,
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.purple.withOpacity(0.4),
+                        color: Colors.black54.withOpacity(0.4),
                         child: MaterialButton(
                           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           onPressed: () {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/screens/anasayfa.dart';
 import 'store_details.dart';
 
 class Store extends StatefulWidget {
@@ -53,40 +52,7 @@ class _StoreState extends State<Store> {
                                     fit: BoxFit.cover,
                                   ),
                                 )),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width - 150,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "İpek Avcı",
-                                    style: TextStyle(
-                                        fontFamily: "Montserrat",
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Featured Products",
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.black),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
+                            _instButton(),
                           ],
                         ),
                       ),
@@ -245,32 +211,40 @@ class _StoreState extends State<Store> {
     );
   }
 
-  // var _currentItemSeleceted;
-  // var _current = [
-  //   ' Ürün Etikeletleri',
-  //   ' Beyaz',
-  //   ' Siyah',
-  //   ' gömlek yaka',
-  //   ' ekru',
-  //   ' gri',
-  //   ' ayakkabı',
-  //   ' Adidas',
-  //   ' ekru',
-  //   ' hırka',
-  //   ' kırmızı',
-  //   ' belden bağlamalı',
-  //   ' kahverengi ',
-  //   ' lacoste',
-  //   ' mavi',
-  //   ' Mont',
-  //   ' nike',
-  //   ' sweatshirt',
-  //   ' spor',
-  //   ' pantolon',
-  //   ' triko',
-  //   ' vizon',
-  //   ' yazlık',
-  //   ' yırtmaç',
-  //   ' örme',
-  // ];
+  Widget _instButton() {
+    // ignore: deprecated_member_use
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () {},
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.white),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width - 150,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "İpek Avcı",
+                  style: TextStyle(
+                      fontFamily: "Montserrat",
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Image(
+                    image: AssetImage("assets/images/instagram.png"),
+                    height: 30.0),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

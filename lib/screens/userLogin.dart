@@ -43,6 +43,7 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                   Text(
                     "SEEPEAKS",
                     style: TextStyle(
+                        color: Colors.black54.withOpacity(0.7),
                         fontFamily: "Montserrat",
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
@@ -81,7 +82,7 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                       child: Material(
                         elevation: 3.0,
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.purple.withOpacity(0.4),
+                        color: Colors.black54.withOpacity(0.4),
                         child: MaterialButton(
                           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           onPressed: () async {
@@ -118,7 +119,7 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                           "Kaydol",
                           textAlign: TextAlign.start,
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.purple.withOpacity(0.7),
                               fontFamily: "Kurale-Regular",
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.bold,
