@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/widget/background_widget.dart';
 
 // ignore: must_be_immutable
@@ -51,11 +52,10 @@ class _SignUpHomeState extends State<SignUpHome> {
                 SizedBox(height: 30.0),
                 Text(
                   "SEEPEAKS",
-                  style: TextStyle(
-                      color: Colors.black54.withOpacity(0.7),
-                      fontFamily: "Montserrat",
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                  style: context.textTheme.subtitle1!.copyWith(
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black54.withOpacity(0.7),
+                  ),
                 ),
                 SizedBox(height: 20.0),
                 Column(
@@ -197,8 +197,8 @@ class _SignUpHomeState extends State<SignUpHome> {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        validator: (String girilenVeri) {
-          if (girilenVeri.length < 6) {
+        validator: (girilenVeri) {
+          if (girilenVeri!.length < 6) {
             return "En az 6 karakter giriniz!";
           } else
             return null;
@@ -220,8 +220,8 @@ class _SignUpHomeState extends State<SignUpHome> {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        validator: (String girilenVeri) {
-          if (!girilenVeri.contains('@') || !girilenVeri.contains('.com')) {
+        validator: (girilenVeri) {
+          if (!girilenVeri!.contains('@') || !girilenVeri.contains('.com')) {
             return "Geçersiz email";
           } else
             return null;

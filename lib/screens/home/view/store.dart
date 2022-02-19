@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'store_details.dart';
 
 class Store extends StatefulWidget {
@@ -8,11 +10,17 @@ class Store extends StatefulWidget {
 }
 
 class _StoreState extends State<Store> {
-  String etiketler;
+  String? etiketler;
+  String _url = 'https://www.instagram.com/';
+  void _launchURL() async {
+    if (!await launch(_url)) throw 'Could not launch $_url';
+    print("$_url");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300].withOpacity(0.4),
+        backgroundColor: Colors.grey[300]!.withOpacity(0.4),
         appBar: AppBar(
             // ignore: deprecated_member_use
             backwardsCompatibility: true,
@@ -40,29 +48,31 @@ class _StoreState extends State<Store> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      ImageConstants.instance.model2,
-                                    ),
-                                    fit: BoxFit.cover,
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          ImageConstants.instance.model2,
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    )),
+                                Text(
+                                  "    İpek Avcı",
+                                  style: context.textTheme.subtitle1!.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey[800]!.withOpacity(0.9),
                                   ),
-                                )),
-                            _instButton(),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                                ),
+                                _instButton(),
+                              ])),
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Row(
@@ -181,38 +191,14 @@ class _StoreState extends State<Store> {
   ) {
     return Column(
       children: [
-        Stack(
-          children: [
-            Container(
-              height: 75,
-              width: 75,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(35),
-                image: DecorationImage(
-                  image: AssetImage(imagePath),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 10,
-        ),
         Container(
-          height: 30,
+          height: 75,
           width: 75,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.indigo,
-          ),
-          child: Center(
-            child: Text(
-              "Mağaza",
-              style: TextStyle(
-                fontFamily: "Montserrat",
-                color: Colors.white,
-              ),
+            borderRadius: BorderRadius.circular(35),
+            image: DecorationImage(
+              image: AssetImage(imagePath),
+              fit: BoxFit.cover,
             ),
           ),
         ),
@@ -223,37 +209,12 @@ class _StoreState extends State<Store> {
   Widget _instButton() {
     // ignore: deprecated_member_use
     return OutlineButton(
-      splashColor: Colors.grey,
-      onPressed: () {},
-      highlightElevation: 0,
+      splashColor: Colors.grey.withOpacity(0.2),
+      onPressed: () async => _launchURL(),
+      highlightElevation: 1,
       borderSide: BorderSide(color: Colors.white),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width - 150,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "İpek Avcı",
-                  style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Image(
-                    image: AssetImage(ImageConstants.instance.instagram),
-                    height: 30.0),
-              ],
-            ),
-          ),
-        ],
-      ),
+      child: Image(
+          image: AssetImage(ImageConstants.instance.instagram), height: 30.0),
     );
   }
 }

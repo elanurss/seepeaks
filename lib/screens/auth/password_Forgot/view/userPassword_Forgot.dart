@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/screens/auth/register/view/signup.dart';
 import '../../../../../widget/background_widget.dart';
 
@@ -32,22 +33,20 @@ class _UserPasswordForgot extends State<UserPasswordForgot> {
                     SizedBox(height: 30.0),
                     Text(
                       "SEEPEAKS",
-                      style: TextStyle(
-                          color: Colors.black54.withOpacity(0.7),
-                          fontFamily: "Montserrat",
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style: context.textTheme.subtitle1!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black54.withOpacity(0.7),
+                      ),
                     ),
                     SizedBox(height: 30.0),
                     Text(
                       "Giriş Yaparken Sorun Mu Yaşıyorsun? \n E-posta adresini gir ve hesabına yeniden girebilmen için sana bir bağlantı gönderelim.",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.grey[500],
-                          fontStyle: FontStyle.normal,
-                          fontFamily: "Merienda-Regular.ttf",
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold),
+                      style: context.textTheme.headline6!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: Colors.grey[500],
+                      ),
                     ),
                     SizedBox(height: 30.0),
                     TextField(
@@ -93,11 +92,10 @@ class _UserPasswordForgot extends State<UserPasswordForgot> {
                     Text(
                       "-YA DA-",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w500),
+                      style: context.textTheme.subtitle1!.copyWith(
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black54.withOpacity(0.7),
+                      ),
                     ),
                     Container(
                       alignment: Alignment.bottomCenter,

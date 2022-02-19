@@ -30,7 +30,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return WillPopScope(
       onWillPop: () async {
         final isFirstRouteInCurrentTab =
-            !await _navigatorKeys[_bottomNavIndex].currentState.maybePop();
+            !await _navigatorKeys[_bottomNavIndex].currentState!.maybePop();
         print(
             'isFirstRouteInCurrentTab: ' + isFirstRouteInCurrentTab.toString());
         return isFirstRouteInCurrentTab;
@@ -98,7 +98,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         key: _navigatorKeys[index],
         onGenerateRoute: (routeSettings) {
           return MaterialPageRoute(
-            builder: (context) => routeBuilders[routeSettings.name](context),
+            builder: (context) => routeBuilders[routeSettings.name]!(context),
           );
         },
       ),

@@ -4,10 +4,10 @@ import 'IAppTheme.dart';
 import 'light/ILightTheme.dart';
 
 class AppThemeLight extends IAppTheme with ILightTheme {
-  static AppThemeLight _instance;
+  static AppThemeLight? _instance;
   static AppThemeLight get instance {
     _instance ??= _instance = AppThemeLight._init();
-    return _instance;
+    return _instance!;
   }
 
   AppThemeLight._init();
@@ -37,12 +37,12 @@ class AppThemeLight extends IAppTheme with ILightTheme {
 
   ColorScheme colorScheme() {
     return ColorScheme(
-        primary: colorSchemeLight.white,
+        primary: colorSchemeLight.black,
         primaryVariant: colorSchemeLight.white,
-        secondary: colorSchemeLight.monza,
-        secondaryVariant: Color(0xffff2d55),
+        secondary: colorSchemeLight.white,
+        secondaryVariant: Colors.black,
         surface: colorSchemeLight.black,
-        background: colorSchemeLight.alabaster,
+        background: colorSchemeLight.black,
         error: colorSchemeLight.black,
         onPrimary: colorSchemeLight.black,
         onSecondary: Colors.black,

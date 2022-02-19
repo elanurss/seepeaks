@@ -6,12 +6,12 @@ class CommonBottomNavigationBar extends StatefulWidget {
   final int selectedIndex;
   final List<GlobalKey<NavigatorState>> navigatorKeys;
   final List<Widget> childrens;
-  int _size;
+  var _size;
 
   CommonBottomNavigationBar({
-    this.selectedIndex,
-    this.navigatorKeys,
-    this.childrens,
+    required this.selectedIndex,
+    required this.navigatorKeys,
+    required this.childrens,
   }) {
     assert(navigatorKeys.length == childrens.length);
     _size = childrens.length;
@@ -35,7 +35,7 @@ class _CommonBottomNavigationBarState extends State<CommonBottomNavigationBar> {
     return WillPopScope(
       onWillPop: () async {
         final isFirstRouteInCurrentTab =
-            await widget.navigatorKeys[index].currentState.maybePop();
+            await widget.navigatorKeys[index].currentState!.maybePop();
         return isFirstRouteInCurrentTab;
       },
       child: Offstage(
@@ -51,8 +51,8 @@ class _CommonBottomNavigationBarState extends State<CommonBottomNavigationBar> {
 
 class _BottomBarNavigator extends StatelessWidget {
   _BottomBarNavigator({
-    this.child,
-    this.navigatorKey,
+    required this.child,
+    required this.navigatorKey,
   });
 
   final Widget child;

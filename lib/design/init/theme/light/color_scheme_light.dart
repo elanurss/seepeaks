@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ColorSchemeLight {
-  static ColorSchemeLight _instance;
+  static ColorSchemeLight? _instance;
   static ColorSchemeLight get instance {
     _instance ??= _instance = ColorSchemeLight._init();
-    return _instance;
+    return _instance!;
   }
 
   ColorSchemeLight._init();

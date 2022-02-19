@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/screens/auth/password_Forgot/view/userPassword_Forgot.dart';
 import 'package:flutter_moda_app/screens/auth/register/view/signup.dart';
 import '../../../../widget/background_widget.dart';
@@ -25,6 +27,11 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
     });
   }
 
+  void _next() {
+    Navigator.push(
+        context, CupertinoPageRoute(builder: (context) => LoginHomeUser()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +46,7 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(height: 50.0),
-                  Text(
-                    "SEEPEAKS",
-                    style: TextStyle(
-                        color: Colors.black54.withOpacity(0.7),
-                        fontFamily: "Montserrat",
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
+                  buildTopText(context),
                   SizedBox(height: 20.0),
                   Form(
                     autovalidateMode: AutovalidateMode.always,
@@ -67,10 +67,10 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                       padding: EdgeInsets.only(right: 0),
                       child: Text(
                         'Şifrenizi mi unuttunuz?',
-                        style: TextStyle(
-                            color: Colors.grey[600],
-                            fontWeight: FontWeight.normal,
-                            fontSize: 13),
+                        style: context.textTheme.caption!.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
                   ),
@@ -85,59 +85,63 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
                         child: MaterialButton(
                           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           onPressed: () async {
-                            await ProfilePage();
+                            await ProfilePage(
+                              onnext: _next,
+                            );
                             //await ProfilePage(_emailController.text,_passwordController.text);
                           },
                           child: Text(
                             "Kullanıcı Girişi",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Mali-LightItalic",
-                                fontStyle: FontStyle.normal,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold),
+                            style: context.textTheme.subtitle1!.copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white),
                           ),
                         ),
                       )),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Hesabın yok mu?",
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontFamily: "Kurale-Regular",
-                            fontStyle: FontStyle.normal,
-                            fontSize: 16),
-                      ),
-
-                      // ignore: deprecated_member_use
-                      TextButton(
-                        child: Text(
-                          "Kaydol",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.purple.withOpacity(0.7),
-                              fontFamily: "Kurale-Regular",
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
-                        ),
-                        onPressed: () async {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpHome()));
-                        },
-                      ),
-                    ],
-                  ),
+                  buildBottomRowText(context),
                 ],
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Row buildBottomRowText(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Hesabın yok mu?",
+          style: context.textTheme.subtitle1!
+              .copyWith(fontWeight: FontWeight.w300, color: Colors.black),
+        ),
+        // ignore: deprecated_member_use
+        TextButton(
+          child: Text(
+            "Kaydol",
+            textAlign: TextAlign.start,
+            style: context.textTheme.subtitle1!.copyWith(
+                fontWeight: FontWeight.w400,
+                color: Colors.purple.withOpacity(0.7)),
+          ),
+          onPressed: () async {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SignUpHome()));
+          },
+        ),
+      ],
+    );
+  }
+
+  Text buildTopText(BuildContext context) {
+    return Text(
+      "SEEPEAKS",
+      style: context.textTheme.subtitle1!.copyWith(
+        fontWeight: FontWeight.w400,
+        color: Colors.black54.withOpacity(0.7),
       ),
     );
   }
@@ -180,8 +184,8 @@ class _LoginHomeUserState extends State<LoginHomeUser> {
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        validator: (String girilenVeri) {
-          if (!girilenVeri.contains('@') || !girilenVeri.contains('.com')) {
+        validator: (girilenVeri) {
+          if (!girilenVeri!.contains('@') || !girilenVeri.contains('.com')) {
             return "Geçersiz email";
           } else
             return null;

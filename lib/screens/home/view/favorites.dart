@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_moda_app/design/constants/constants_view/constants.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'package:flutter_moda_app/screens/bottomNavigationBar/bottomNavigationBar.dart';
 
@@ -43,10 +44,10 @@ class _FavoritesState extends State<Favorites> {
                   children: [
                     Text(
                       " Your Likes",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                      style: context.textTheme.headline6!.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
                     ),
                     SizedBox(height: 40),
                   ],
@@ -85,11 +86,13 @@ class _FavoritesState extends State<Favorites> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       buildCircleAvatar(),
-                      Text("İpek Avcı",
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.5,
-                              color: Colors.black)),
+                      Text(
+                        "İpek Avcı",
+                        style: context.textTheme.caption!.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
                       Icon(
                         Icons.favorite,
                         size: 17,

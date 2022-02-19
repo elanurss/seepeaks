@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_moda_app/design/card/not_found_navigation.dart';
 import 'package:flutter_moda_app/design/splash_view/view/splash_view.dart';
@@ -22,10 +23,15 @@ class NavigationRoute {
       case NavigationConstants.HOME_DETAIL:
         throw Error();
       case NavigationConstants.USER_PROFILE:
-        return normalNavigate(ProfilePage());
+        return normalNavigate(ProfilePage(onnext: _next));
       default:
         return MaterialPageRoute(builder: (context) => NotFoundNavigation());
     }
+  }
+
+  void _next(context) {
+    Navigator.push(
+        context, CupertinoPageRoute(builder: (context) => LoginHomeUser()));
   }
 
   MaterialPageRoute normalNavigate(Widget widget) =>

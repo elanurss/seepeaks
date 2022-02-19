@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/extension/context_extension.dart';
 import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'detail.dart';
 import 'store.dart';
@@ -14,7 +15,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.grey[300].withOpacity(0.4),
+        backgroundColor: Colors.grey[300]!.withOpacity(0.4),
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: !isSearching
@@ -23,11 +24,10 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Text(
                       "Takip ettiğin içerik üreticileri burada!",
-                      style: TextStyle(
-                          fontFamily: "Montserrat",
-                          fontSize: 15,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                      style: context.textTheme.subtitle1!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 )
@@ -80,46 +80,47 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   Text(
                     "İçerik Üreticileri",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Montserrat",
-                      color: Colors.grey[800].withOpacity(0.9),
+                    style: context.textTheme.headline6!.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[800]!.withOpacity(0.9),
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(
+              height: 7,
+            ),
             // ------------- PROFİL KISMI
             Container(
-              height: 160,
+              height: 150,
               width: double.infinity,
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.purple.withOpacity(0.1),
               child: ListView(
                 padding: EdgeInsets.all(10),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  listeElamani(ImageConstants.instance.model3),
+                  listArray(ImageConstants.instance.model3),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani(ImageConstants.instance.model1),
+                  listArray(ImageConstants.instance.model1),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani(ImageConstants.instance.model2),
+                  listArray(ImageConstants.instance.model2),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani(ImageConstants.instance.model3),
+                  listArray(ImageConstants.instance.model3),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani(ImageConstants.instance.model1),
+                  listArray(ImageConstants.instance.model1),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani(ImageConstants.instance.model2),
+                  listArray(ImageConstants.instance.model2),
                   SizedBox(
                     width: 20,
                   ),
@@ -161,10 +162,11 @@ class _HomeViewState extends State<HomeView> {
                                 children: [
                                   Text(
                                     "İpek Avcı",
-                                    style: TextStyle(
-                                        fontFamily: "Montserrat",
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                    style:
+                                        context.textTheme.subtitle1!.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.grey[800]!.withOpacity(0.9),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -178,11 +180,10 @@ class _HomeViewState extends State<HomeView> {
                           children: [
                             Text(
                               "Featured Products",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.black),
+                              style: context.textTheme.subtitle1!.copyWith(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey[800]!.withOpacity(0.9),
+                              ),
                             ),
                           ],
                         ),
@@ -302,10 +303,9 @@ class _HomeViewState extends State<HomeView> {
                               child: Center(
                                 child: Text(
                                   "#Moda",
-                                  style: TextStyle(
-                                    fontFamily: "Montserrat",
-                                    fontSize: 10,
-                                    color: Colors.brown,
+                                  style: context.textTheme.subtitle1!.copyWith(
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.grey[800]!.withOpacity(0.9),
                                   ),
                                 ),
                               ),
@@ -323,10 +323,9 @@ class _HomeViewState extends State<HomeView> {
                               child: Center(
                                 child: Text(
                                   "#Sale ",
-                                  style: TextStyle(
-                                    fontFamily: "Montserrat",
-                                    fontSize: 10,
-                                    color: Colors.brown,
+                                  style: context.textTheme.subtitle1!.copyWith(
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.grey[800]!.withOpacity(0.9),
                                   ),
                                 ),
                               ),
@@ -341,7 +340,7 @@ class _HomeViewState extends State<HomeView> {
         ));
   }
 
-  Widget listeElamani(
+  Widget listArray(
     String imagePath,
   ) {
     return Column(
@@ -349,8 +348,8 @@ class _HomeViewState extends State<HomeView> {
         Stack(
           children: [
             Container(
-              height: 75,
-              width: 75,
+              height: 80,
+              width: 80,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(35),
                 image: DecorationImage(
@@ -361,9 +360,6 @@ class _HomeViewState extends State<HomeView> {
             ),
           ],
         ),
-        SizedBox(
-          height: 10,
-        ),
         Center(
           child: ElevatedButton(
             onPressed: () {
@@ -372,14 +368,13 @@ class _HomeViewState extends State<HomeView> {
             },
             child: Text(
               "Mağaza",
-              style: TextStyle(
-                fontSize: 13,
-                fontFamily: "Montserrat",
-                color: Colors.white,
+              style: context.textTheme.caption!.copyWith(
+                fontWeight: FontWeight.w700,
+                color: Colors.purple.withOpacity(0.6),
               ),
             ),
             style: ElevatedButton.styleFrom(
-              primary: Colors.purple.withOpacity(0.4),
+              primary: Colors.white.withOpacity(0.7),
             ),
           ),
         ),
