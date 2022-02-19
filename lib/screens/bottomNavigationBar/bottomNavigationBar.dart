@@ -1,19 +1,19 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/screens/auth/login/view/userLogin.dart';
+import 'package:flutter_moda_app/screens/home/view/favorites.dart';
+import 'package:flutter_moda_app/screens/home/view/home_view.dart';
+import 'package:flutter_moda_app/screens/profile/view/profile_screen.dart';
 import 'package:iconsax/iconsax.dart';
-import '../../design/bottombar.dart';
-import 'anasayfa.dart';
-import 'favorites.dart';
-import 'profile_screen.dart';
-import 'userLogin.dart';
+import '../../design/bottom_bar/view/bottombar.dart';
 
-class MainScreen extends StatefulWidget {
+class BottomNavigation extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _BottomNavigationState createState() => _BottomNavigationState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _BottomNavigationState extends State<BottomNavigation> {
   void _next() {
     Navigator.push(
         context, CupertinoPageRoute(builder: (context) => LoginHomeUser()));
@@ -66,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
           selectedIndex: _bottomNavIndex,
           navigatorKeys: _navigatorKeys,
           childrens: [
-            AnaSayfa(),
+            HomeView(),
             ProfilePage(
               onnext: _next,
             )
@@ -80,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
     return {
       '/': (context) {
         return [
-          AnaSayfa(),
+          HomeView(),
           ProfilePage(
             onnext: _next,
           ),

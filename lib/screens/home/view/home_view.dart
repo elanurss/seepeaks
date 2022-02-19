@@ -2,49 +2,72 @@ import 'package:flutter/material.dart';
 import 'detail.dart';
 import 'store.dart';
 
-class AnaSayfa extends StatefulWidget {
+class HomeView extends StatefulWidget {
   @override
-  _AnaSayfaState createState() => _AnaSayfaState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _AnaSayfaState extends State<AnaSayfa> {
+class _HomeViewState extends State<HomeView> {
+  bool isSearching = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.grey[300].withOpacity(0.4),
         appBar: AppBar(
-          centerTitle: false,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Text(
-            "Takip ettiğin içerik üreticileri burada!",
-            style: TextStyle(
-                fontFamily: "Montserrat",
-                fontSize: 15,
-                color: Colors.grey[800].withOpacity(0.9),
-                fontWeight: FontWeight.bold),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Card(
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20))),
-                color: Colors.black,
-                margin: const EdgeInsets.all(5.0),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.white.withOpacity(0.9),
-                    size: 25,
-                  ),
-                  onPressed: () {},
+          backgroundColor: Colors.black,
+          title: !isSearching
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Takip ettiğin içerik üreticileri burada!",
+                      style: TextStyle(
+                          fontFamily: "Montserrat",
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                )
+              : TextField(
+                  onChanged: (value) {},
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      focusColor: Colors.white,
+                      hoverColor: Colors.white,
+                      icon: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
+                      hintText: "Search for products...",
+                      hintStyle: TextStyle(color: Colors.white)),
                 ),
-              ),
-            ),
+          actions: <Widget>[
+            isSearching
+                ? IconButton(
+                    icon: Icon(
+                      Icons.cancel,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        this.isSearching = false;
+                      });
+                    },
+                  )
+                : IconButton(
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        this.isSearching = true;
+                      });
+                    },
+                  )
           ],
         ),
         body: ListView(
@@ -102,7 +125,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 ],
               ),
             ),
-
             // --------------  CARD KISMI
             Padding(
               padding: const EdgeInsets.all(12.0),

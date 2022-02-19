@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/design/constants.dart';
-import 'main_screen.dart';
+import 'package:flutter_moda_app/design/constants/constants_view/constants.dart';
+import 'package:flutter_moda_app/screens/bottomNavigationBar/bottomNavigationBar.dart';
 
 class Favorites extends StatefulWidget {
   @override
@@ -20,8 +20,8 @@ class _FavoritesState extends State<Favorites> {
                 size: 25,
               ),
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => MainScreen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BottomNavigation()));
               },
             ),
             centerTitle: true,

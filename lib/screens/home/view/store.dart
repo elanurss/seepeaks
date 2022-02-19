@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'store_details.dart';
 
 class Store extends StatefulWidget {
-  Store({key}) : super(key: key);
-
   @override
   State<Store> createState() => _StoreState();
 }
@@ -15,6 +13,8 @@ class _StoreState extends State<Store> {
     return Scaffold(
         backgroundColor: Colors.grey[300].withOpacity(0.4),
         appBar: AppBar(
+            // ignore: deprecated_member_use
+            backwardsCompatibility: true,
             centerTitle: true,
             backgroundColor: Colors.black,
             elevation: 4,

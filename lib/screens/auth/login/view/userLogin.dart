@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/screens/signup.dart';
-import '../widget/background_widget.dart';
-import 'profile_screen.dart';
-import 'userPassword_Forgot.dart';
+import 'package:flutter_moda_app/screens/auth/password_Forgot/view/userPassword_Forgot.dart';
+import 'package:flutter_moda_app/screens/auth/register/view/signup.dart';
+import '../../../../widget/background_widget.dart';
+import '../../../profile/view/profile_screen.dart';
 
-// ignore: must_be_immutable
 class LoginHomeUser extends StatefulWidget {
   @override
   _LoginHomeUserState createState() => _LoginHomeUserState();

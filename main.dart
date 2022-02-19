@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/design/splash_view.dart';
+import 'package:flutter_moda_app/design/splash_view/view/splash_view.dart';
 
 void main() {
   runApp(Seepeaks());

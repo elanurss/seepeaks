@@ -33,9 +33,7 @@ class _StoreDetailsState extends State<StoreDetails> {
               children: [
                 InstaLikeButton(
                   image: NetworkImage(widget.imgPath),
-                  onChanged: () {
-                    // Do something...
-                  },
+                  onChanged: () {},
                   icon: Icons.favorite,
                   iconSize: 80,
                   iconColor: Colors.red,
@@ -43,9 +41,7 @@ class _StoreDetailsState extends State<StoreDetails> {
                   height: 700,
                   width: MediaQuery.of(context).size.width / 2,
                   duration: const Duration(seconds: 2),
-                  onImageError: (e, _) {
-                    // Do something...
-                  },
+                  onImageError: (e, _) {},
                   imageAlignment: Alignment.topLeft,
                   imageBoxfit: BoxFit.cover,
                   imageScale: 5.0,

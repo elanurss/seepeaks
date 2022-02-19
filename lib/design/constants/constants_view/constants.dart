@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 //our constants values weee will define here
-const kPrimaryColor = Colors.amber;
-const kScaffoldColor = Colors.amber;
-const kTextColorDark = Colors.amber;
+const kPrimaryColor = Colors.purple;
+const kScaffoldColor = Colors.purple;
+const kTextColorDark = Colors.purple;
 const kTextColorWhite = Color(0xFFFDFEFE);
-const kTextColorLight = Colors.amber;
-const kOutlineInputColor = Colors.amber;
+const kTextColorLight = Colors.purple;
+const kOutlineInputColor = Colors.purple;
 
 const kDefaultPadding = 20.0;
 

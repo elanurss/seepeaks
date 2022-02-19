@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class UserPassordRefresh extends StatefulWidget {
   @override
   _UserPassordRefresh createState() => _UserPassordRefresh();
@@ -8,10 +7,8 @@ class UserPassordRefresh extends StatefulWidget {
 
 class _UserPassordRefresh extends State<UserPassordRefresh> {
   TextEditingController _oldpassword = TextEditingController();
-  // ignore: unused_field
   TextEditingController _password = TextEditingController();
   TextEditingController _email = TextEditingController();
-  // ignore: non_constant_identifier_names
   TextEditingController _password_confirmation = TextEditingController();
 
   @override

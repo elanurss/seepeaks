@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/screens/main_screen.dart';
+import 'package:flutter_moda_app/screens/bottomNavigationBar/bottomNavigationBar.dart';
 
 class SplashView extends StatefulWidget {
   @override
@@ -14,7 +14,8 @@ class _SplashView extends State<SplashView> {
     super.initState();
     Future.delayed(new Duration(seconds: 3), () async {
       await Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (BuildContext context) => MainScreen()),
+          MaterialPageRoute(
+              builder: (BuildContext context) => BottomNavigation()),
           (Route<dynamic> route) => false);
     });
   }

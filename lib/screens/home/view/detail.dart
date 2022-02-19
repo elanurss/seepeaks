@@ -32,7 +32,7 @@ class _DetayState extends State<Detay> {
               borderRadius: BorderRadius.circular(10),
               elevation: 4,
               child: Container(
-                height: 300,
+                height: 270,
                 width: MediaQuery.of(context).size.width - 30,
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -87,19 +87,6 @@ class _DetayState extends State<Detay> {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.share,
-                            color: Colors.grey.withOpacity(0.8),
-                            size: 25,
-                          ),
-                        ),
-                      ],
-                    ),
                     Divider(
                       color: Colors.black.withOpacity(0.6),
                       indent: 20,
@@ -108,24 +95,37 @@ class _DetayState extends State<Detay> {
                     Positioned(
                       top: MediaQuery.of(context).size.height / 2,
                       left: 50,
-                      child: Container(
-                        height: 40,
-                        width: 180,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.6),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(18.0),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Center(
+                            Material(
+                              elevation: 3.0,
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.black54.withOpacity(0.4),
+                              child: MaterialButton(
+                                padding:
+                                    EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                                onPressed: () async {},
                                 child: Text(
-                              "Trendyol.com'da İncele",
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            )),
+                                  "Trendyol.com'da İncele",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.share,
+                                color: Colors.black54.withOpacity(0.4),
+                                size: 25,
+                              ),
+                            ),
                           ],
                         ),
                       ),

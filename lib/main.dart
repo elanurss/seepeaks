@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'design/splash_view.dart';
+import 'design/constants/navigation/navigation_constants.dart';
+import 'design/init/navigation/navigation_route.dart';
+import 'design/theme/app_theme_light.dart';
 
 void main() {
   runApp(const Seepeaks());
@@ -13,12 +15,10 @@ class Seepeaks extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'SEEPEAKS',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: SplashView(),
+      title: 'SEEPEAKS APP',
+      initialRoute: NavigationConstants.SPLASH_VIEW,
+      onGenerateRoute: NavigationRoute.instance.generateRoute,
+      theme: AppThemeLight.instance.theme,
     );
   }
 }

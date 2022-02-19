@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'signup.dart';
-import '../widget/background_widget.dart';
+import 'package:flutter_moda_app/screens/auth/register/view/signup.dart';
+import '../../../../../widget/background_widget.dart';
 
-// ignore: must_be_immutable
 class UserPasswordForgot extends StatefulWidget {
   @override
   _UserPasswordForgot createState() => _UserPasswordForgot();
