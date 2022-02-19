@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -78,7 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         children: [
                           SizedBox(height: 140),
                           SvgPicture.asset(
-                            "assets/images/profil.svg",
+                            ImageConstants.instance.svg,
                             width: MediaQuery.of(context).size.width * .5,
                           ),
                           SizedBox(height: 20),

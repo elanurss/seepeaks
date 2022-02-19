@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'detail.dart';
 import 'store.dart';
 
@@ -98,27 +99,27 @@ class _HomeViewState extends State<HomeView> {
                 padding: EdgeInsets.all(10),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  listeElamani("assets/images/model3.jpeg"),
+                  listeElamani(ImageConstants.instance.model3),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani("assets/images/model1.jpeg"),
+                  listeElamani(ImageConstants.instance.model1),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani("assets/images/model2.jpeg"),
+                  listeElamani(ImageConstants.instance.model2),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani("assets/images/model3.jpeg"),
+                  listeElamani(ImageConstants.instance.model3),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani("assets/images/model1.jpeg"),
+                  listeElamani(ImageConstants.instance.model1),
                   SizedBox(
                     width: 20,
                   ),
-                  listeElamani("assets/images/model2.jpeg"),
+                  listeElamani(ImageConstants.instance.model2),
                   SizedBox(
                     width: 20,
                   ),
@@ -145,8 +146,8 @@ class _HomeViewState extends State<HomeView> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
-                                    image:
-                                        AssetImage("assets/images/model2.jpeg"),
+                                    image: AssetImage(
+                                        ImageConstants.instance.model2),
                                     fit: BoxFit.cover,
                                   ),
                                 )),
@@ -194,11 +195,11 @@ class _HomeViewState extends State<HomeView> {
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => Detay(
-                                        imgPath:
-                                            "assets/images/seepeaks2.jpeg")));
+                                        imgPath: ImageConstants
+                                            .instance.seepeaks2)));
                               },
                               child: Hero(
-                                tag: "assets/images/seepeaks2.jpeg",
+                                tag: ImageConstants.instance.seepeaks2,
                                 child: Container(
                                   height: 200,
                                   width:
@@ -208,7 +209,7 @@ class _HomeViewState extends State<HomeView> {
                                     borderRadius: BorderRadius.circular(5),
                                     image: DecorationImage(
                                       image: AssetImage(
-                                        "assets/images/seepeaks2.jpeg",
+                                        ImageConstants.instance.seepeaks2,
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -224,13 +225,14 @@ class _HomeViewState extends State<HomeView> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (context) => Detay(
-                                            imgPath:
-                                                "assets/images/denim.jpeg")));
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Detay(
+                                                imgPath: ImageConstants
+                                                    .instance.denim)));
                                   },
                                   child: Hero(
-                                    tag: "assets/images/denim.jpeg",
+                                    tag: ImageConstants.instance.denim,
                                     child: Container(
                                       height: 95,
                                       width:
@@ -241,7 +243,7 @@ class _HomeViewState extends State<HomeView> {
                                         borderRadius: BorderRadius.circular(5),
                                         image: DecorationImage(
                                           image: AssetImage(
-                                            "assets/images/denim.jpeg",
+                                            ImageConstants.instance.denim,
                                           ),
                                           fit: BoxFit.cover,
                                         ),
@@ -254,13 +256,15 @@ class _HomeViewState extends State<HomeView> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (context) => Detay(
-                                            imgPath:
-                                                "assets/images/seepeaks3.jpeg")));
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                            builder: (context) => Detay(
+                                                  imgPath: ImageConstants
+                                                      .instance.seepeaks3,
+                                                )));
                                   },
                                   child: Hero(
-                                    tag: "assets/images/seepeaks3.jpeg",
+                                    tag: ImageConstants.instance.seepeaks3,
                                     child: Container(
                                       height: 95,
                                       width:
@@ -271,7 +275,7 @@ class _HomeViewState extends State<HomeView> {
                                         borderRadius: BorderRadius.circular(5),
                                         image: DecorationImage(
                                           image: AssetImage(
-                                            "assets/images/seepeaks3.jpeg",
+                                            ImageConstants.instance.seepeaks3,
                                           ),
                                           fit: BoxFit.cover,
                                         ),

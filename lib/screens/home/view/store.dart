@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'store_details.dart';
 
 class Store extends StatefulWidget {
@@ -20,7 +21,9 @@ class _StoreState extends State<Store> {
             elevation: 4,
             title: Container(
                 margin: EdgeInsets.all(2),
-                child: Image.asset("assets/images/seepeaks.jpeg"))),
+                child: Image.asset(
+                  ImageConstants.instance.logo,
+                ))),
         body: ListView(
           padding: EdgeInsets.only(top: 10),
           children: [
@@ -47,8 +50,9 @@ class _StoreState extends State<Store> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
-                                    image:
-                                        AssetImage("assets/images/model2.jpeg"),
+                                    image: AssetImage(
+                                      ImageConstants.instance.model2,
+                                    ),
                                     fit: BoxFit.cover,
                                   ),
                                 )),
@@ -67,11 +71,12 @@ class _StoreState extends State<Store> {
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => StoreDetails(
-                                        imgPath:
-                                            "assets/images/seepeaks2.jpeg")));
+                                          imgPath:
+                                              ImageConstants.instance.seepeaks2,
+                                        )));
                               },
                               child: Hero(
-                                tag: "assets/images/seepeaks2.jpeg",
+                                tag: ImageConstants.instance.seepeaks2,
                                 child: Container(
                                   height: 200,
                                   width:
@@ -81,7 +86,7 @@ class _StoreState extends State<Store> {
                                     borderRadius: BorderRadius.circular(5),
                                     image: DecorationImage(
                                       image: AssetImage(
-                                        "assets/images/seepeaks2.jpeg",
+                                        ImageConstants.instance.seepeaks2,
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -97,13 +102,15 @@ class _StoreState extends State<Store> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (context) => StoreDetails(
-                                            imgPath:
-                                                "assets/images/denim.jpeg")));
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                            builder: (context) => StoreDetails(
+                                                  imgPath: ImageConstants
+                                                      .instance.denim,
+                                                )));
                                   },
                                   child: Hero(
-                                    tag: "assets/images/denim.jpeg",
+                                    tag: ImageConstants.instance.denim,
                                     child: Container(
                                       height: 95,
                                       width:
@@ -114,7 +121,7 @@ class _StoreState extends State<Store> {
                                         borderRadius: BorderRadius.circular(5),
                                         image: DecorationImage(
                                           image: AssetImage(
-                                            "assets/images/denim.jpeg",
+                                            ImageConstants.instance.denim,
                                           ),
                                           fit: BoxFit.cover,
                                         ),
@@ -127,13 +134,15 @@ class _StoreState extends State<Store> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (context) => StoreDetails(
-                                            imgPath:
-                                                "assets/images/seepeaks3.jpeg")));
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                            builder: (context) => StoreDetails(
+                                                  imgPath: ImageConstants
+                                                      .instance.seepeaks3,
+                                                )));
                                   },
                                   child: Hero(
-                                    tag: "assets/images/seepeaks3.jpeg",
+                                    tag: ImageConstants.instance.seepeaks3,
                                     child: Container(
                                       height: 95,
                                       width:
@@ -144,7 +153,7 @@ class _StoreState extends State<Store> {
                                         borderRadius: BorderRadius.circular(5),
                                         image: DecorationImage(
                                           image: AssetImage(
-                                            "assets/images/seepeaks3.jpeg",
+                                            ImageConstants.instance.seepeaks3,
                                           ),
                                           fit: BoxFit.cover,
                                         ),
@@ -238,7 +247,7 @@ class _StoreState extends State<Store> {
                   height: 5,
                 ),
                 Image(
-                    image: AssetImage("assets/images/instagram.png"),
+                    image: AssetImage(ImageConstants.instance.instagram),
                     height: 30.0),
               ],
             ),

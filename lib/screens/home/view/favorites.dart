@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_moda_app/design/constants/constants_view/constants.dart';
+import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 import 'package:flutter_moda_app/screens/bottomNavigationBar/bottomNavigationBar.dart';
 
 class Favorites extends StatefulWidget {
@@ -28,8 +29,9 @@ class _FavoritesState extends State<Favorites> {
             backgroundColor: Colors.black,
             elevation: 9,
             title: Container(
-                margin: EdgeInsets.all(2),
-                child: Image.asset("assets/images/seepeaks.jpeg"))),
+              margin: EdgeInsets.all(2),
+              child: Image.asset(ImageConstants.instance.logo),
+            )),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -96,7 +98,9 @@ class _FavoritesState extends State<Favorites> {
                     ],
                   ),
                 ),
-                Expanded(child: Image.asset("assets/images/seepeaks3.jpeg")),
+                Expanded(
+                  child: Image.asset(ImageConstants.instance.seepeaks3),
+                ),
               ]));
         });
   }

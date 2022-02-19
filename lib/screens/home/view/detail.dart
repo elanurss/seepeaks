@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_moda_app/design/constants/image/image_constants.dart';
 
 // ignore: must_be_immutable
 class Detay extends StatefulWidget {
@@ -54,8 +55,7 @@ class _DetayState extends State<Detay> {
                                 ),
                                 image: DecorationImage(
                                     image: AssetImage(
-                                      'assets/images/denim.jpeg',
-                                    ),
+                                        ImageConstants.instance.denim),
                                     fit: BoxFit.contain)),
                           ),
                         ),
