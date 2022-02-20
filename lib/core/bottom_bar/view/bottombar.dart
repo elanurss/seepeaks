@@ -31,6 +31,8 @@ class _CommonBottomNavigationBarState extends State<CommonBottomNavigationBar> {
     }));
   }
 
+//---WillPopScope
+
   Widget _buildOffstageNavigator(int index) {
     return WillPopScope(
       onWillPop: () async {
