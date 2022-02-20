@@ -35,7 +35,8 @@ dependencies:
   http:
   intl:
   url_launcher: 
-  
+  responsive_sizer: 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

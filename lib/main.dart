@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_moda_app/design/init/theme/app_theme_light.dart';
-import 'design/constants/navigation/navigation_constants.dart';
-import 'design/init/navigation/navigation_route.dart';
+import 'core/constants/navigation/navigation_constants.dart';
+import 'core/init/navigation/navigation_route.dart';
+import 'core/init/theme/app_theme_light.dart';
 
 void main() {
   runApp(Seepeaks());
